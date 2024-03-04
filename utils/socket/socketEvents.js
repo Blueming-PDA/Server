@@ -6,12 +6,11 @@ module.exports = function (io) {
     console.log("===============");
 
     socket.on("setSid", async (userObj) => {
-      console.log("SocketID::::", socket.id);
+      // console.log("SocketID::::", socket.id);
       const user = await User.setSid(userObj.email, socket.id);
-      console.log("User.setSid를 보내고 받아온 USER !!!!!!!", user);
+      // console.log("User.setSid를 보내고 받아온 USER !!!!!!!", user);
     });
 
-    
     socket.on("message", async (alarmContent) => {
       console.log("alarm :: ", alarmContent);
 
