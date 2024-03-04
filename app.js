@@ -13,6 +13,7 @@ const alarmRouter = require("./routes/alarm");
 const assignmentRouter = require("./routes/assignment");
 const proxyRouter = require("./routes/proxy");
 const codeLinkRouter = require("./routes/codeLink");
+const headerMessageRouter = require("./routes/headerMessage");
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use("/api/assignment", assignmentRouter);
 app.use("/api/alarms", alarmRouter);
 app.use("/api/proxy", proxyRouter);
 app.use("/api/link", codeLinkRouter);
+app.use("/api/headerMessage", headerMessageRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
