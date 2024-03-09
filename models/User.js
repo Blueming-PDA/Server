@@ -29,7 +29,6 @@ const userSchema = new mongoose.Schema({
     // socket 통신을 위한 id
     type: String,
     default: "default",
-
   },
   profile: {
     type: String,
@@ -70,11 +69,9 @@ userSchema.statics.login = async function (email, password) {
   throw Error("잘못된 이메일입니다.");
 };
 
-
 // socket
 userSchema.statics.setSid = async function (email, sid) {
   const user = await this.findOne({ email });
-
 
   if (user) {
     user.sid = sid;
@@ -111,7 +108,7 @@ userSchema.statics.setSid = async function (email, sid) {
     user.sid = sid;
 
     await user.save();
-    console.log("저장완료", user.sid);
+    // console.log("저장완료", user.sid);
     return user.visibleUser;
   }
 };
